@@ -8,13 +8,11 @@ Gem::Specification.new do |spec|
   spec.authors = ["Khaled AbuShqear"]
   spec.email   = ["qmax93@gmail.com"]
 
-  spec.summary               = "TODO: Write a short summary, because RubyGems requires one."
-  spec.description           = "TODO: Write a longer description or delete this line."
-  spec.homepage              = "TODO: Put your gem's website or public repo URL here."
+  spec.summary               = "Phonofy integrates with rails ActiveRecord to provide formatting functionalities."
+  spec.description           = "Phonofy is a Ruby gem that simplifies phone number formatting in Rails applications using the Phonelib library. With Phonofy, you can easily parse and format phone number data according to international standards, ensuring that your phone number data is consistent and valid across your application."
+  spec.homepage              = "https://github.com/shqear93/phonofy"
   spec.license               = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
-
-  spec.metadata["allowed_push_host"] = "https://github.com/"
 
   spec.metadata["homepage_uri"]    = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/shqear93/phonofy"
