@@ -1,0 +1,6 @@
+en:
+  errors:
+    messages:
+      invalid_country: "has invalid country code"
+      invalid_type: 'type is invalid'
+      invalid_extension: 'extension is invalid'

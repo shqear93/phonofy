@@ -10,3 +10,14 @@ require "rubocop/rake_task"
 RuboCop::RakeTask.new
 
 task default: %i[spec rubocop]
+
+require "erb"
+
+desc "Generate README.md from template"
+task :readme do
+  template = File.read("README.md.erb")
+  readme = ERB.new(template).result(binding)
+  File.write("README.md", readme)
+end
+
+task default: :test

@@ -30,8 +30,11 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   # Dependencies
+  spec.add_dependency "i18n"
   spec.add_dependency "phonelib"
   spec.add_dependency "activerecord"
+
+  # spec.add_runtime_dependency "rails", ">= 6.0"
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
