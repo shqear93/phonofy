@@ -12,11 +12,12 @@ RuboCop::RakeTask.new
 task default: %i[spec rubocop]
 
 require "erb"
+spec = Gem::Specification.load("phonofy.gemspec")
 
 desc "Generate README.md from template"
 task :readme do
   template = File.read("README.md.erb")
-  readme = ERB.new(template).result(binding)
+  readme = ERB.new(template).result_with_hash({ spec: spec })
   File.write("README.md", readme)
 end
 

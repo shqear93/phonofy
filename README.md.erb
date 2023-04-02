@@ -1,13 +1,13 @@
-# <%= gem_name.capitalize %>
+# <%= spec.name.capitalize %>
 
-<%= gem_description %>
+<%= spec.description %>
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem '<%= gem_name %>'
+gem '<%= spec.name %>'
 ```
 
 And then execute:
@@ -19,11 +19,11 @@ bundle
 Or install it yourself as:
 
 ```shell
-gem install <%= gem_name %>
+gem install <%= spec.name %>
 ```
 
 ## **Usage**
-To use <%= gem_name %>, simply call the **phonofy** method in your Rails model:
+To use <%= spec.name %>, simply call the **phonofy** method in your Rails model:
 
 ```ruby
 class User < ApplicationRecord
@@ -43,7 +43,7 @@ end
 
 This will add phone number validation and formatting to the **mobile_number** attribute of the **Contact** model.
 
-You can also pass additional options to <%= gem_name %> to customize its behavior:
+You can also pass additional options to <%= spec.name %> to customize its behavior:
 
 ```ruby
 class User < ApplicationRecord
@@ -56,21 +56,21 @@ This will add phone number validation and formatting to the **phone** attribute 
 
 ## **Configuration**
 
-You can configure <%= gem_name %> by creating an initializer file in your Rails application and setting the default options:
+You can configure <%= spec.name %> by creating an initializer file in your Rails application and setting the default options:
 
 ```ruby
-# config/initializers/<%= gem_name %>.rb
-<%= gem_module %>.configure do |config|
+# config/initializers/<%= spec.name %>.rb
+<%= spec.name.capitalize %>.configure do |config|
   config.default_phonelib_options = { countries: [:us, :ca], types: [:mobile] }
   config.default_twilio_options = { lookup: { type: :carrier_type } }
 end
 ```
 
-This will set the default options for <%= gem_name %> to validate only US and Canada mobile phone numbers using the Phonelib library, and perform a Twilio lookup to get carrier information for the phone number.
+This will set the default options for <%= spec.name %> to validate only US and Canada mobile phone numbers using the Phonelib library, and perform a Twilio lookup to get carrier information for the phone number.
 
 ## **Contributing**
 
-Bug reports and pull requests are welcome on GitHub at <%= github_url %>. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org/) code of conduct.
+Bug reports and pull requests are welcome on GitHub at <%= spec.metadata["source_code_uri"] %>. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org/) code of conduct.
 
 ## **License**
 
@@ -78,4 +78,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## **Credits**
 
-<%= gem_name %> was created by <%= author_name %> and is maintained by a community of contributors.
+<%= spec.name %> was created by <%= spec.authors.first %> and is maintained by a community of contributors.
