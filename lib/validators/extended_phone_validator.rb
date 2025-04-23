@@ -2,6 +2,7 @@
 
 require_relative "../validators"
 require "#{Gem::Specification.find_by_name("phonelib").gem_dir}/lib/validators/phone_validator"
+require "active_model/version"
 
 module Phonofy
   module Validators
@@ -13,7 +14,16 @@ module Phonofy
         valid  = countries.present? ? valid_country? : phone_valid?
         valid  = valid && valid_types? && valid_extensions?
 
-        record.errors.add(attribute, message(error_message), options) unless valid
+        unless valid
+          # Rails 8.0+ compatibility - errors.add no longer accepts options as a third argument
+          if ActiveModel.version >= Gem::Version.new('8.0.0')
+            # For Rails 8.0+, use the new API
+            record.errors.add(attribute, message(error_message), **options)
+          else
+            # For older Rails versions, use the old API
+            record.errors.add(attribute, message(error_message), options)
+          end
+        end
       end
 
       private
