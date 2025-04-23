@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    phonofy (0.1.2)
+    phonofy (0.1.3)
       activerecord
       i18n
       phonelib
