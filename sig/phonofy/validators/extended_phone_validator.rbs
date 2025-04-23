@@ -1,0 +1,15 @@
+module Phonofy
+  module Validators
+    class ExtendedPhoneValidator < PhoneValidator
+      def validate_each: (untyped record, Symbol attribute, untyped value) -> void
+
+      private
+
+      def message: (?Symbol custom) -> Symbol
+
+      def error_message: () -> Symbol
+
+      def valid_country?: () -> bool
+    end
+  end
+end

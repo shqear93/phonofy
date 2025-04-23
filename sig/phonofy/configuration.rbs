@@ -1,0 +1,7 @@
+module Phonofy
+  class Configuration
+    attr_accessor default_phonelib_options: Hash[Symbol, untyped]
+
+    def initialize: () -> void
+  end
+end

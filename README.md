@@ -1,6 +1,6 @@
 # Phonofy
 
-Phonofy is a Ruby gem that simplifies phone number formatting in Rails applications using the Phonelib library. With Phonofy, you can easily parse and format phone number data according to international standards, ensuring that your phone number data is consistent and valid across your application.
+Phonofy is a Ruby gem that simplifies phone number formatting in Ruby applications using the Phonelib library. It integrates seamlessly with Rails applications but can also be used in non-Rails environments. With Phonofy, you can easily parse and format phone number data according to international standards, ensuring that your phone number data is consistent and valid across your application.
 
 ## Installation
 
@@ -31,7 +31,7 @@ class User < ApplicationRecord
 end
 ```
 
-This will add phone number validation and formatting to the **phone_number** attribute of the **Driver** model.
+This will add phone number validation and formatting to the **phone_number** attribute of the **User** model.
 
 You can also specify a custom attribute name for the phone number:
 
@@ -62,11 +62,30 @@ You can configure phonofy by creating an initializer file in your Rails applicat
 # config/initializers/phonofy.rb
 Phonofy.configure do |config|
   config.default_phonelib_options = { countries: [:us, :ca], types: [:mobile] }
-  config.default_twilio_options = { lookup: { type: :carrier_type } }
 end
 ```
 
-This will set the default options for phonofy to validate only US and Canada mobile phone numbers using the Phonelib library, and perform a Twilio lookup to get carrier information for the phone number.
+This will set the default options for phonofy to validate only US and Canada mobile phone numbers using the Phonelib library.
+
+## **International Phone Number Support**
+
+Phonofy supports international phone numbers through the Phonelib gem. You can validate and format phone numbers for specific countries by including the country codes in the countries option:
+
+```ruby
+class User < ApplicationRecord
+  phonofy :phone, phonelib: { countries: [:us, :gb, :fr] }
+end
+```
+
+Example usage:
+
+```ruby
+user = User.new(phone: "+14155552671")
+user.phone(:e164)          # => "+14155552671"
+user.phone(:international) # => "+1 415-555-2671"
+user.phone(:national)      # => "(415) 555-2671"
+user.phone_is_valid?       # => true
+```
 
 ## **Contributing**
 

@@ -1,0 +1,4 @@
+module Phonofy
+  module Validators
+  end
+end

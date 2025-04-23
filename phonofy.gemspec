@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors = ["Khaled AbuShqear"]
   spec.email   = ["qmax93@gmail.com"]
 
-  spec.summary               = "Phonofy integrates with rails ActiveRecord to provide formatting functionalities."
-  spec.description           = "Phonofy is a Ruby gem that simplifies phone number formatting in Rails applications using the Phonelib library. With Phonofy, you can easily parse and format phone number data according to international standards, ensuring that your phone number data is consistent and valid across your application."
+  spec.summary               = "Phonofy integrates with ActiveRecord to provide phone number formatting functionalities."
+  spec.description           = "Phonofy is a Ruby gem that simplifies phone number formatting in Ruby applications using the Phonelib library. It integrates seamlessly with Rails applications but can also be used in non-Rails environments. With Phonofy, you can easily parse and format phone number data according to international standards, ensuring that your phone number data is consistent and valid across your application."
   spec.homepage              = "https://github.com/shqear93/phonofy"
   spec.license               = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
@@ -34,7 +34,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency "phonelib"
   spec.add_dependency "activerecord"
 
-  # spec.add_runtime_dependency "rails", ">= 6.0"
+  # Optional dependencies
+  spec.add_development_dependency "rails", ">= 6.0"
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html

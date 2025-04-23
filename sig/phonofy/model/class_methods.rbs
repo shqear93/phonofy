@@ -1,0 +1,9 @@
+module Phonofy
+  module Model
+    module ClassMethods
+      DEFAULTS: Hash[Symbol, untyped]
+
+      def phonofy: (?Symbol column_name, **untyped options) -> void
+    end
+  end
+end

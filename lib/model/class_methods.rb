@@ -1,11 +1,14 @@
 # frozen_string_literal: true
-# require_relative "phonofy/fy/version"
 
 module Phonofy
   module Model
     module ClassMethods
-
-      DEFAULTS = { phonelib: { allow_blank: true, validation_options: {} } }.freeze
+      DEFAULTS = {
+        phonelib: {
+          allow_blank: true,
+          validation_options: {}
+        }
+      }.deep_merge(Phonofy.config.default_phonelib_options || {}).freeze
 
       def phonofy(column_name = :phone_number, **options)
         options = DEFAULTS.deep_merge(options)
@@ -15,7 +18,7 @@ module Phonofy
           self.phonofy_configs = { _counter: {} }
         end
 
-        counter                                 = (phonofy_configs[:_counter][column_name] ||= 0)
+        counter = (phonofy_configs[:_counter][column_name] ||= 0)
         phonofy_configs[:_counter][column_name] += 1
 
         phonofy_configs["#{column_name}_#{counter}"] = options.dup

@@ -1,0 +1,11 @@
+module Phonofy
+  module Model
+    class InstanceDynamicMethods < Module
+      DEFAULT_PHONE_FORMAT: Symbol
+      SUPPORTED_FORMATS: Array[Symbol]
+
+      def initialize: (Symbol column_name, Hash[Symbol, untyped] options) -> void
+      def included: (Class base) -> void
+    end
+  end
+end

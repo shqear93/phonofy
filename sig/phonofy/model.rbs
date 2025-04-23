@@ -1,0 +1,5 @@
+module Phonofy
+  module Model
+    def self.included: (Class base) -> void
+  end
+end

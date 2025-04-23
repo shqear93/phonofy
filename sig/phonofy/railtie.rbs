@@ -1,0 +1,5 @@
+module Phonofy
+  class Railtie < Rails::Railtie
+    # No need to define initializers in RBS
+  end
+end

@@ -1,4 +1,15 @@
 module Phonofy
   VERSION: String
-  # See the writing guide of rbs: https://github.com/ruby/rbs#guides
+
+  class Error < StandardError
+  end
+
+  class << self
+    attr_accessor configuration: Configuration
+  end
+
+  # These methods are already defined by the attr_accessor above
+
+  def self.configure: () { (Configuration) -> void } -> void
+  def self.config: () -> Configuration
 end
