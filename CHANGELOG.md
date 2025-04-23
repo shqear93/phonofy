@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.2.0] - 2025-04-24
+
 - Added compatibility with Rails 8.0
 - Replaced Rails Engine with Railtie for lighter integration
 - Improved code organization and dependency management
