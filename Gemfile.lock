@@ -231,7 +231,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   phonofy!
-  rails (>= 6.0)
+  rails (>= 6.0, < 9.0)
   rake (~> 13.0)
   rspec (~> 3.0)
   rubocop (~> 1.21)

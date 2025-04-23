@@ -2,6 +2,7 @@ module Phonofy
   module Validators
     class ExtendedPhoneValidator < PhoneValidator
       def validate_each: (untyped record, Symbol attribute, untyped value) -> void
+      def check_rails_version: () -> bool
 
       private
 

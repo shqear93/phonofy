@@ -1,6 +1,6 @@
 # Phonofy
 
-Phonofy is a Ruby gem that simplifies phone number formatting in Ruby applications using the Phonelib library. It integrates seamlessly with Rails applications but can also be used in non-Rails environments. With Phonofy, you can easily parse and format phone number data according to international standards, ensuring that your phone number data is consistent and valid across your application.
+Phonofy is a Ruby gem that simplifies phone number formatting in Ruby applications using the Phonelib library. It integrates seamlessly with Rails applications (compatible with Rails 6.0 through 8.0) but can also be used in non-Rails environments. With Phonofy, you can easily parse and format phone number data according to international standards, ensuring that your phone number data is consistent and valid across your application.
 
 ## Installation
 
