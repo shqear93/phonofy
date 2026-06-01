@@ -27,18 +27,14 @@ module Phonofy
     end
   end
 
-  # Initialize default configuration
   self.configuration = Configuration.new
 end
 
-# Load ActiveRecord-related code
-require "active_record"
-require_relative "model/instance_dynamic_methods"
-require_relative "model"
-
-# Only load the Railtie if Rails is available
-if defined?(Rails)
-  require_relative "railtie"
+# Load ActiveRecord-related code conditionally
+if defined?(ActiveRecord)
+  require_relative "phonofy/model/instance_dynamic_methods"
+  require_relative "phonofy/model"
 end
 
-# Model is already required above
+# Only load the Railtie if Rails is available
+require_relative "phonofy/railtie" if defined?(Rails)

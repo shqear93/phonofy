@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "../validators"
 require "#{Gem::Specification.find_by_name("phonelib").gem_dir}/lib/validators/phone_validator"
 require "active_model/version"
 

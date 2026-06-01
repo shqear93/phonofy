@@ -21,10 +21,11 @@ RSpec.describe "Phonofy Railtie" do
     it "would define the Railtie class" do
       # Since Rails is not available in the test environment,
       # we'll just check that the file exists
-      expect(File.exist?("lib/railtie.rb")).to be true
+      expect(File.exist?("lib/phonofy/railtie.rb")).to be true
+      expect(File.exist?("lib/phonofy/model.rb")).to be true
 
       # Read the file content to verify it defines a Railtie
-      content = File.read("lib/railtie.rb")
+      content = File.read("lib/phonofy/railtie.rb")
       expect(content).to include("class Railtie < Rails::Railtie")
       expect(content).to include("initializer \"phonofy.initialize\"")
       expect(content).to include("initializer \"phonofy.load_translations\"")

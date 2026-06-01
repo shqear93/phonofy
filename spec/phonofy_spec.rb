@@ -147,8 +147,8 @@ RSpec.describe Phonofy do
   describe "Validators" do
     it "are mentioned in the code" do
       # Just check if the file exists
-      expect(File.exist?("lib/validators.rb")).to be true
-      expect(File.exist?("lib/validators/extended_phone_validator.rb")).to be true
+      expect(File.exist?("lib/phonofy/validators.rb")).to be true
+      expect(File.exist?("lib/phonofy/validators/extended_phone_validator.rb")).to be true
     end
   end
   describe "Jordan phone numbers" do
